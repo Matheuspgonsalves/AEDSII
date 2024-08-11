@@ -17,19 +17,14 @@ class palindromo2 {
     }
 
     public static boolean isPalindromo(String s){
-        int tamString = s.length()-1, aux = 0;
+        int tamString = s.length();
 
-        for(int i = 0, j = tamString; i < s.length()/2; i++){
-            if(s.charAt(i) == s.charAt(j)) {
-                aux++;
+        for(int i = 0; i < tamString/2; i++){
+            if(s.charAt(i) != s.charAt(tamString-1-i)) {
+                return false;
             }
-            j--;
         }
-        if(aux == tamString/2) {
-            return true;
-        } 
-        return false;
-        
+        return true;
     }
 
     public static void imprimir(boolean bool){
