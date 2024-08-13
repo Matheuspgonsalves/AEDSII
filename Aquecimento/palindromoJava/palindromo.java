@@ -1,8 +1,6 @@
 
 class palindromo {
     public static void main(String[] args){
-        //Classes in e out
-
         
         String string ;
         
