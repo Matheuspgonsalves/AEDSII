@@ -1,9 +1,7 @@
-import java.util.Scanner;
 class Q02 { //Classe principal e unica
 
     public static void main(String[] args){//Metodo main
         //Declaracao de variaveis
-        Scanner sc = new Scanner(System.in);
         String input;
         String fim = "FIM";
         boolean isEqual = false;
