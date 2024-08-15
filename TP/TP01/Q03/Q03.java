@@ -10,7 +10,7 @@ class Q02 { //Classe principal e unica
         do{
             input = MyIO.readLine(); 
 
-            //Estrutura lógica para verificar se a palavra "FIM" foi lida
+            //Estrutura lógica para verificar sSe a palavra "FIM" foi lida
             if(input.length() != fim.length()){
                 isEqual = true;
             } else {
