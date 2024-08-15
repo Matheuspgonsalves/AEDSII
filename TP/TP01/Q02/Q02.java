@@ -10,7 +10,7 @@ class Q02 { //Classe principal e unica
 
         //Estrutura Do While para executar o algoritmo
         do{
-            input = MyIO.readString(); 
+            input = MyIO.readLine(); 
 
             //Estrutura lógica para verificar se a palavra "FIM" foi lida
             if(input.length() != fim.length()){
