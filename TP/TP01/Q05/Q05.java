@@ -37,18 +37,20 @@ class Q05 {
 
             }
 
-            System.out.println(expressao);
+            expressao = resolveExpressao(expressao);
            
         }
     }
 
     public static String[] transformaEntradaEmVetor(String entradaString){//
         String[] splitEntrada;
+
         if(entradaString.charAt(0) == '2'){// Estrutura para dividir a string em pedaços, sendo que a expressao será armazena inteiramente na ultima posicao
             splitEntrada = entradaString.split(" ",4);
         } else {
             splitEntrada = entradaString.split(" ",5);
         }
+
         return splitEntrada;
     }
     
@@ -59,6 +61,7 @@ class Q05 {
             String valor = splitEntrada[i];
             booleanos[i-1] = Boolean.parseBoolean(valor.equals("1")?"true":"false"); // Converte '1' para true e '0' para false
         }
+
         return booleanos;
     }
 
@@ -73,6 +76,36 @@ class Q05 {
         }
 
         return str;
+    }
+
+    public static String resolveExpressao(String str){
+        String newStr = "";
+
+        for(int i = (str.length() - 1); i >= 0; i--){
+            if(str.charAt(i) == '('){
+                switch (str.charAt(i - 1)) {
+                    case 't':
+                        not(str, i);
+                        break;
+                    case 'r':
+
+                        break;
+                    case 'd':
+
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+
+    public static String not(String temp, int i){
+        
+        for(int j = i; temp.charAt(j) == ')'; j++){
+            
+        }
     }
     
 }
