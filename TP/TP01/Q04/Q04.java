@@ -3,6 +3,8 @@ class Q04 {
     public static void main(String[] args){
         //Variaveis
         String input;
+        Random gerador = new Random();
+        gerador.setSeed(4);
         
         while(!(input = leInput()).equals("FIM")){
             String aux = trocaString(input);
@@ -20,9 +22,8 @@ class Q04 {
         String aux = "";
         char[] newChar = new char[temp.length()];
         //Variaveis e set para utilizar a classe random
-        Random gerador = new Random();
-        gerador.setSeed(4);
-        int a = 'a' + Math.abs(gerador.nextInt() % 26);
+        
+        int a = (char)'a' + Math.abs(gerador.nextInt() % 26);
         int b = 'a' + Math.abs(gerador.nextInt() % 26);
 
         for(int i = 0; i < temp.length(); i++){
