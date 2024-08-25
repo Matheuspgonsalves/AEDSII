@@ -1,32 +1,37 @@
-public class Q01 { //Classe principal e única
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-    // Método main
-    public static void main(String[] args){ 
-        //Declaracao de variável
-        String input;
+class Q01 {
+    public static void main(String[] args) throws IOException{
+        //Classes in e out
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         
-        //Estrutura repetitiva para ler as palavras até a palavra "FIM"
-        while ( !(input = MyIO.readLine()).equals("FIM") ){
-            int charMaiusculos = contaChar(input);
-            imprimir( charMaiusculos );
-        } 
-    } 
+        String string ;
+        
+        while(!(string = in.readLine()).equals("FIM")){
+            boolean isPalindromo = isPalindromo(string);
 
-    //Metodo para contagem das letras maiusculas
-    public static int contaChar(String temp){
-        int count = 0;
-        //Iteracao para contagem das letras maiusculas
-        for (int i = 0; i < temp.length(); i++){
-            //Condicao da contagem
-            if( ((int)temp.charAt(i) >= 65) && ((int)temp.charAt(i) <= 90) ){
-                count++;
-            }
+            imprimir(isPalindromo);
         }
-        return count;
     }
 
-    //Metodo para imprimir um numero
-    public static void imprimir(int x){ 
-        System.out.println(x);
+    public static boolean isPalindromo(String s){
+        int tamString = s.length();
+
+        for(int i = 0; i < tamString/2; i++){
+            if(s.charAt(i) != s.charAt(tamString-1-i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void imprimir(boolean bool){
+        if(bool){
+            System.out.println("SIM");
+        } else {
+            System.out.println("NAO");
+        }
     }
 }
