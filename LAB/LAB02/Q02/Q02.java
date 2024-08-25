@@ -1,17 +1,28 @@
 class Q02 {
     public static void main(String[] args) {
-        int n1, n2;
+        String input;
+        input = MyIO.readLine();
+        while(input.trim().isEmpty()){
 
-        n1 = MyIO.readInt();
-        n2 = MyIO.readInt();
+
+            
+            String[] partes = input.split(" ");
+            String newString = "";
+
+            int n1 = Integer.parseInt(partes[0]);
+            int n2 = Integer.parseInt(partes[1]);
+
+            for(int i = n1; i <= n2; i++){
+                newString += i;
+            }
+
+            for(int i = newString.length()-1; i >= 0; i--){
+                newString += newString.charAt(i);
+            }
+
+            System.out.println(newString);
+        }
+
         
-        for(int i = n1; i <= n2; i++) {
-            MyIO.print(i);
-        }
-
-        for(int i = n2; i >= n1; i--) {
-            MyIO.print(i);
-        }
-        MyIO.println("");
     }
 }
